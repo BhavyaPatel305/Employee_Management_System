@@ -1,6 +1,3 @@
-// Name: Bhavya Patel
-// Student ID: 110065852
-
 #include <stdio.h>
 #include <sqlite3.h>
 
