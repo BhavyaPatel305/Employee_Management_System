@@ -16,6 +16,7 @@ void empHireDate(sqlite3* db);
 void empDeptAddress(sqlite3* db);
 void empSal(sqlite3* db);
 void empPhoneNumber(sqlite3* db);
+void insertNewEmp(sqlite3* db);
 
 
 static int callback(void* data, int argc, char** argv, char** ColName){
@@ -63,6 +64,8 @@ int main(int argc, char* argv[]) {
        printf("11) Complete address of the department where the employee is currently working?\n");
        printf("12) What is the salary of an employee?\n");
        printf("13) What is phone number of an Employee?\n");
+       printf("14) Insert a new employee?\n");
+       
        // Menu finished
 
        // Ask user for input
@@ -120,6 +123,8 @@ int main(int argc, char* argv[]) {
             case 13:
                empPhoneNumber(db);
                break;
+            case 14:
+               insertNewEmp(db);
             default:
                 printf("Invalid Input!!!");
                 break;
@@ -437,7 +442,7 @@ void empSal(sqlite3* db){
 }
 
 
-// Function for menu item 13
+void insertNewEmp(sqlite3* db);
 void empPhoneNumber(sqlite3* db){
         char* errMsg = 0;
 
@@ -459,4 +464,57 @@ void empPhoneNumber(sqlite3* db){
            printf("Query Successful\n\n");
 
        }
+}
+
+// Function for menu item 14
+void insertNewEmp(sqlite3* db){
+      char* errMsg = 0;
+
+      // inputs from user
+      int id = 0; // ID
+      char fName[100];// First Name
+      char lName[100];// Last Name
+      char email[100];//Email
+      char phoneNo[100];//Phone Number
+      char hireDate[100];//HireDate
+      char jobId[10];// Job ID
+      int sal = 0;
+      float comm_pct = 0;
+      int ManagerId;
+      int DeptId;
+
+      // Scan inputs from the user
+      printf("Enter ID:");
+      scanf("%d", &id);
+      printf("Enter First Name:");
+      scanf("%s", fName);
+      printf("Enter Last Name:");
+      scanf("%s", lName);
+      printf("Enter Email:");
+      scanf("%s", email);
+      printf("Enter Phone Number:");
+      scanf("%s", phoneNo);
+      printf("Enter Hire Date:");
+      scanf("%s", hireDate);
+      printf("Enter Job ID:");
+      scanf("%s", jobId);
+      printf("Enter Salary:");
+      scanf("%d", &sal);
+      printf("Enter Commission PCT:");
+      scanf("%f", &comm_pct);
+      printf("Enter Manager ID:");
+      scanf("%d", &ManagerId);
+      printf("Enter Department ID:");
+      scanf("%d", &DeptId);
+
+      
+
+      // Insert Command
+      char* insert_cmd = "INSERT INTO Employees(Id, FirstName, LastName, Email, PhoneNumber, HireDate, JobId, Salary, CommissionPct,\
+      ManagerId, DepartmentId) VALUES(%s, %s, %s,%s,%s,%s, %d, %f, %d, %d)";
+
+      char str[1000];
+      sprintf(str, insert_cmd,id, fName, lName, email, phoneNo, hireDate, jobId, sal, comm_pct, \
+      ManagerId, DeptId);
+      printf("%s", str);
 }
