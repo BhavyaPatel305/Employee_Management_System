@@ -514,7 +514,7 @@ void insertNewEmp(sqlite3* db){
       ManagerId, DepartmentId) VALUES(%s, %s, %s,%s,%s,%s, %d, %f, %d, %d)";
 
       char str[1000];
-      sprintf(str, insert_cmd,id, fName, lName, email, phoneNo, hireDate, jobId, sal, comm_pct, \
+      snprintf(str, insert_cmd, id, fName, lName, email, phoneNo, hireDate, jobId, sal, comm_pct, \
       ManagerId, DeptId);
       printf("%s", str);
 }
