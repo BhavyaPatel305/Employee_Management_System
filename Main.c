@@ -3,19 +3,19 @@
 
 
 // Function declarations
-void fun1(sqlite3* db);
-void fun2(sqlite3* db);
-void fun3(sqlite3* db);
-void fun4(sqlite3* db);
-void fun5(sqlite3* db);
-void fun6(sqlite3* db);
-void fun7(sqlite3* db);
-void fun8(sqlite3* db);
-void fun9(sqlite3* db);
-void fun10(sqlite3* db);
-void fun11(sqlite3* db);
-void fun12(sqlite3* db);
-void fun13(sqlite3* db);
+void listAllJobTitles(sqlite3* db);
+void highAndLowSal(sqlite3* db);
+void empCountry(sqlite3* db);
+void empGrade(sqlite3* db);
+void empNameStartLetter(sqlite3* db);
+void salRangeForEacjJobTitle(sqlite3* db);
+void empHistory(sqlite3* db);
+void empEmail(sqlite3* db);
+void empCommission(sqlite3* db);
+void empHireDate(sqlite3* db);
+void empDeptAddress(sqlite3* db);
+void empSal(sqlite3* db);
+void empPhoneNumber(sqlite3* db);
 
 
 static int callback(void* data, int argc, char** argv, char** ColName){
@@ -76,49 +76,49 @@ int main(int argc, char* argv[]) {
                return 0;
                break;
            case 1:
-               fun1(db);
+               listAllJobTitles(db);
                break;
             case 2:
-               fun2(db);
+               highAndLowSal(db);
                break;
 
             case 3:
-               fun3(db);
+               empCountry(db);
                break;
 
             case 4:
-               fun4(db);
+               empGrade(db);
                break;
 
             case 5:
-               fun5(db);
+               empNameStartLetter(db);
                break;
 
             case 6:
-               fun6(db);
+               salRangeForEacjJobTitle(db);
                break;
 
             case 7:
-               fun7(db);
+               empHistory(db);
                break;
 
             case 8:
-               fun8(db);
+               empEmail(db);
                break;
             case 9:
-               fun9(db);
+               empCommission(db);
                break;
             case 10:
-               fun10(db);
+               empHireDate(db);
                break;
             case 11:
-               fun11(db);
+               empDeptAddress(db);
                break;
             case 12:
-               fun12(db);
+               empSal(db);
                break;
             case 13:
-               fun13(db);
+               empPhoneNumber(db);
                break;
             default:
                 printf("Invalid Input!!!");
@@ -133,7 +133,7 @@ int main(int argc, char* argv[]) {
 }
 
 // Function for menu item 1
-void fun1(sqlite3* db){
+void listAllJobTitles(sqlite3* db){
         char* errMsg = 0;
 
        //create SQL statement
@@ -156,7 +156,7 @@ void fun1(sqlite3* db){
 }
 
 // Function for menu item 2
-void fun2(sqlite3* db){
+void highAndLowSal(sqlite3* db){
         char* errMsg = 0;
 
        //create SQL statement
@@ -198,7 +198,7 @@ void fun2(sqlite3* db){
 }
 
 // Function for menu item 3
-void fun3(sqlite3* db){
+void empCountry(sqlite3* db){
         char* errMsg = 0;
 
        //create SQL statement
@@ -222,7 +222,7 @@ void fun3(sqlite3* db){
 }
 
 // Function for menu item 4
-void fun4(sqlite3* db){
+void empGrade(sqlite3* db){
         char* errMsg = 0;
 
        //create SQL statement
@@ -246,7 +246,7 @@ void fun4(sqlite3* db){
 }
 
 // Function for menu item 5
-void fun5(sqlite3* db){
+void empNameStartLetter(sqlite3* db){
         char* errMsg = 0;
 
        //create SQL statement
@@ -270,7 +270,7 @@ void fun5(sqlite3* db){
 }
 
 // Function for menu item 6
-void fun6(sqlite3* db){
+void salRangeForEacjJobTitle(sqlite3* db){
         char* errMsg = 0;
 
        //create SQL statement
@@ -293,7 +293,7 @@ void fun6(sqlite3* db){
 }
 
 // Function for menu item 7
-void fun7(sqlite3* db){
+void empHistory(sqlite3* db){
         char* errMsg = 0;
 
        //create SQL statement
@@ -316,7 +316,7 @@ void fun7(sqlite3* db){
 }
 
 // Function for menu item 8
-void fun8(sqlite3* db){
+void empEmail(sqlite3* db){
         char* errMsg = 0;
 
        //create SQL statement
@@ -340,7 +340,7 @@ void fun8(sqlite3* db){
 }
 
 // Function for menu item 9
-void fun9(sqlite3* db){
+void empCommission(sqlite3* db){
         char* errMsg = 0;
 
        //create SQL statement
@@ -364,7 +364,7 @@ void fun9(sqlite3* db){
 }
 
 // Function for menu item 10
-void fun10(sqlite3* db){
+void empHireDate(sqlite3* db){
         char* errMsg = 0;
 
        //create SQL statement
@@ -389,7 +389,7 @@ void fun10(sqlite3* db){
 
 
 // Function for menu item 11
-void fun11(sqlite3* db){
+void empDeptAddress(sqlite3* db){
         char* errMsg = 0;
 
        //create SQL statement
@@ -413,7 +413,7 @@ void fun11(sqlite3* db){
 }
 
 // Function for menu item 12
-void fun12(sqlite3* db){
+void empSal(sqlite3* db){
         char* errMsg = 0;
 
        //create SQL statement
@@ -438,7 +438,7 @@ void fun12(sqlite3* db){
 
 
 // Function for menu item 13
-void fun13(sqlite3* db){
+void empPhoneNumber(sqlite3* db){
         char* errMsg = 0;
 
        //create SQL statement
@@ -460,8 +460,3 @@ void fun13(sqlite3* db){
 
        }
 }
-
-
-
-
-
